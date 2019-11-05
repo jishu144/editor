@@ -1,0 +1,8 @@
+<div *ngIf="!toCreate">
+  <h4>Landing page</h4>
+  <button class="btn btn-primary" (click)="create()">Create Document</button>
+</div>
+
+<div *ngIf="toCreate">
+<router-outlet></router-outlet>
+</div>

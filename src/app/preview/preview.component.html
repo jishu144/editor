@@ -1,0 +1,37 @@
+<h4>Preview the Document</h4>
+
+
+<div *ngIf="!toEdit">
+  <!-- <span>{{toBeReviewed.id}}</span> <br> -->
+  <div [innerHTML]="toBeReviewed.data | safeHtml"></div>
+  <!-- <div >{{toBeReviewed.data}}</div> -->
+  <!-- <div ng:bind="toBeReviewed.data"></div> -->
+  <!-- <div [innerHTML]="st"></div> -->
+</div>
+
+<div *ngIf="!toEdit">
+    <button (click)="edit()">Edit</button>
+</div>
+
+<div *ngIf="toEdit">
+    <div class="form-group has-feedback" 
+    [ngClass]="{ 'has-error': myckeditor.invalid && myckeditor.touched }">
+<ckeditor [(ngModel)]="toBeReviewed.data" 
+          #myckeditor="ngModel"
+          name="myckeditor"
+          required
+          [config]="ckeConfig" 
+          debounce="500" >        
+</ckeditor>
+<button (click)="save()">save</button>
+<div *ngIf="myckeditor.invalid && myckeditor.touched" class="help-block">Required field.</div>
+</div>
+</div>
+
+<div *ngIf="toDownload">
+<h4>Give a file name</h4>
+<input [(ngModel)]="fileName" type=text>
+<button (click)="downLoad2(toBeReviewed.data)">download</button>
+</div>
+
+<button *ngIf="!toDownload" (click)="download()">download</button>
