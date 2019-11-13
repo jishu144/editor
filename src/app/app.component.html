@@ -1,8 +1,13 @@
-<div *ngIf="!toCreate">
+<div *ngIf="!toCreate && !toView">
   <h4>Landing page</h4>
-  <button class="btn btn-primary" (click)="create()">Create Document</button>
+  <div>
+    <button class="btn btn-primary" (click)="create()">Create Document</button>
+  </div>
+  <div>
+      <button class="btn btn-primary" (click)="view()">View Documents</button>
+  </div>
+</div>
+<div *ngIf="toCreate || toView">
+  <router-outlet></router-outlet>
 </div>
 
-<div *ngIf="toCreate">
-<router-outlet></router-outlet>
-</div>

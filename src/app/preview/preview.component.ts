@@ -59,10 +59,6 @@ export class PreviewComponent implements OnInit {
       }
     });
     sessionStorage.setItem('documents',JSON.stringify(this.documents));
-
-
-    var data = this.ckeditor.data;
-    console.log(data);
     
   }
 
@@ -74,7 +70,7 @@ export class PreviewComponent implements OnInit {
   downLoad2(data: any) {
     
 
- 
+    data='<!DOCTYPE html>'+data;
     const blob: Blob = new Blob([data], {type: 'text/btl'});
     const fileName: string = this.fileName+'.btl';
     const objectUrl: string = URL.createObjectURL(blob);
@@ -87,5 +83,10 @@ export class PreviewComponent implements OnInit {
 
     document.body.removeChild(a);
     URL.revokeObjectURL(objectUrl);
+  }
+ 
+
+  view(){
+    this.router.navigate(['documents'])
   }
 }

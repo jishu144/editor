@@ -9,8 +9,8 @@
   <!-- <div [innerHTML]="st"></div> -->
 </div>
 
-<div *ngIf="!toEdit">
-    <button (click)="edit()">Edit</button>
+<div *ngIf="!toEdit" style="margin-top: 1%;">
+    <button style="width: 140px;" (click)="edit()">Edit</button>
 </div>
 
 <div *ngIf="toEdit">
@@ -31,7 +31,19 @@
 <div *ngIf="toDownload">
 <h4>Give a file name</h4>
 <input [(ngModel)]="fileName" type=text>
-<button (click)="downLoad2(toBeReviewed.data)">download</button>
+
+<div style="margin-top: 1%;">
+  <button style="width: 140px;" (click)="downLoad2(toBeReviewed.data)">download</button>
 </div>
 
-<button *ngIf="!toDownload" (click)="download()">download</button>
+</div>
+<div style="margin-top: 1%;">
+  <button style="width: 140px;" *ngIf="!toDownload" (click)="download()">download</button>
+</div>
+<div style="margin-top: 1%;">
+  <button style="width: 140px;" class="btn btn-primary" (click)="view()">View Documents</button>
+</div>
+<div style="margin-top: 1%;">
+  <button style="width: 140px;" routerLink="/" class="btn btn-primary takeSurvey-button">Return Home</button>
+</div>
+<!-- <button (click)="home()">Home page</button> -->

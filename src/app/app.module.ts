@@ -10,10 +10,13 @@ import { RouterModule } from '@angular/router';
 import { CreateDocumentComponent } from './create-document/create-document.component';
 import { PreviewComponent } from './preview/preview.component';
 import { SafePipe } from './preview/safe.pipe';
+import { DocumentsComponent } from './documents/documents.component';
+// import { FlexLayoutModule } from "@angular/flex-layout";
+
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, CKEditorModule, AppRoutingModule,RouterModule],
-  declarations: [ AppComponent, CreateDocumentComponent, PreviewComponent, SafePipe],
+  declarations: [ AppComponent, CreateDocumentComponent, PreviewComponent, SafePipe, DocumentsComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -1,0 +1,14 @@
+<div (click)="goBack()"><i class="material-icons">keyboard_backspace</i></div>
+<h4>All Documents</h4>
+<div *ngFor="let document of documents">
+<div>
+  <span>{{document.id}}</span>
+  <span [innerHTML]="document.data"></span>
+</div>
+</div>
+<button routerLink="/" class="btn btn-primary takeSurvey-button">Return Home</button>
+
+
+
+
+

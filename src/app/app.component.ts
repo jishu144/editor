@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   mycontent: string;
   log: string = "";
   toCreate:boolean=false;
+  toView:boolean=false;
   documents:Docy[]=[]
   @ViewChild("myckeditor") ckeditor: any;
 
@@ -26,6 +27,12 @@ export class AppComponent implements OnInit {
 
   create(){
     this.toCreate=true;
+    this.toView=false;
     this.router.navigate(['createDocument'])
+  }
+  view(){
+    this.toView=true;
+    this.toCreate=false;
+    this.router.navigate(['documents'])
   }
 }
